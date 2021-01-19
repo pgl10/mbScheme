@@ -1,0 +1,21 @@
+>> (apply + '(1 2 3 4))
+10
+>> (define n 1234567890123456789)
+>> (* n n)
+1524157875323883675019051988750190521
+>> (cons 2 (list 4 8))
+(2 4 8)
+>> (display 330/390)
+11/13
+>> (define big-real 1.23e200)
+>> (= (* big-real big-real) +inf.0)
+#t
+>> (define z (make-rectangular 1 1))
+>> z
+1+1i
+>> (angle z)
+0.7853981633974483
+>> (magnitude z)
+1.4142135623730951
+>> (exit)
+Bye.

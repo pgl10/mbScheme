@@ -1,0 +1,46 @@
+>> (map sin (list 0 1 2))
+(0.0 0.8414709848078965 0.9092974268256817)
+>> (rational->real (pi))
+3.141592653589793
+>> (sqrt -1)
+0+1i
+>> (translate 'vous)
+you
+>> (define vw (vector 1 2 3))
+>> (vector-set! vw 0 11)
+>> vw
+[11 2 3]
+>> ;;; about using a file
+>> (define myfile (open "archive.txt"))
+>> (fdisplay myfile "Bonjour le Monde !")
+>> (new-line myfile)
+>> (fdisplay myfile "abcdefghijklmn")
+>> (new-line myfile)
+>> (fdisplay myfile 1234567)
+>> (new-line myfile)
+>> (file? myfile)
+#t
+>> (file-read "archive.txt")
+(Bonjour le Monde ! abcdefghijklmn 1234567)
+>> (file-close! myfile)
+>> ;;; using a little data base
+>> (include "base.scm")
+>> (nth 1 base)
+(Dupond Pierre Lyon)
+>> (length base)
+6 
+>> (name 2) 
+Dupont
+>> (forename 4)
+Alain
+>> (town 6)
+Grenoble
+>> (newer "Garnier" "Paul" "Versailles")
+>> (length base)
+7
+>> (nth 7 base)
+(Garnier Paul Versailles)
+>> (delete 7)
+>> (length base)
+6
+>>

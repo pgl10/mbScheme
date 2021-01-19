@@ -1,0 +1,43 @@
+(define (caddr s) (car (cdr (cdr s))))
+(define base '(
+    (Dupond Pierre Lyon) 
+    (Dupont Marie Nice)
+    (Duval Jacques Lyon)
+    (Richard Alain Geneve)
+    (Perrot Jean Nice)
+    (Leroy Anna Grenoble)
+    )
+)
+(define (name n) 
+    (if (or (< n 1) (> n (length base))) "impossible"
+        (car (nth n base))
+    )
+)
+(define (forename n) 
+    (if (or (< n 1) (> n (length base))) "impossible"
+        (cadr (nth n base))
+    )
+)
+(define (town n)
+    (if (or (< n 1) (> n (length base))) "impossible"
+        (caddr (nth n base))
+    )
+)
+(define (newer n f t)
+    (define (good n f t)
+        (cond
+            ((not (string? n)) #f)
+            ((not (string? f)) #f)
+            ((not (string? t)) #f)
+            (else #t)
+        )
+    )
+    (if (not (good n f t)) "impossible"
+        (set! base (enclose (list n f t) base))
+    )
+)
+(define (delete n)
+    (if (or (< n 1) (> n (length base))) "impossible"
+        (set! base (remove (nth n base) base))
+    )
+)
